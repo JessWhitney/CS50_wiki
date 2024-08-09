@@ -1,12 +1,18 @@
 {% extends "encyclopedia/layout.html" %}
+{% block title %} Create New Entry {% endblock %}
+
 
 {% block body %}
 
-<form action="" method="post"> <!-- TODO: post this info somewhere->
+<div>Create a New Wiki Entry:</div>
+
+<form action="" method="post">
     {% csrf_token %}
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="content" placeholder="Entry content">
-    <input type="submit">
+    <input required class="form-control" type="text" name="entry_title" placeholder="Title">
+    <br>
+    <textarea required class="form-control" rows="5" name="entry_content" placeholder="Entry content"></textarea>
+    <br>
+    <button type="submit">Submit</button>
 </form>
 
 
