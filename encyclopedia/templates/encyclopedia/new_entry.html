@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+
+<form action="" method="post"> <!-- TODO: post this info somewhere->
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="content" placeholder="Entry content">
+    <input type="submit">
+</form>
+
+
+{% endblock %}
