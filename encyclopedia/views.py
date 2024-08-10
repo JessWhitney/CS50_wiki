@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
@@ -35,4 +35,10 @@ def entry_page(request, title):
 
 
 def new_entry(request):
-    return render(request, "encyclopedia/new_entry.html")
+    if request.method == "GET":
+        return render(request, "encyclopedia/new_entry.html")
+    form_title = request.POST.get("entry_title")
+    form_content = request.POST.get("entry_content")
+
+    util.save_entry(form_title, form_content)
+    return redirect(f"/wiki/{form_title}")
