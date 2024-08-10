@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.urls import reverse
 from django import forms
 from . import util
@@ -39,6 +39,9 @@ def new_entry(request):
         return render(request, "encyclopedia/new_entry.html")
     form_title = request.POST.get("entry_title")
     form_content = request.POST.get("entry_content")
+
+    if util.get_entry(form_title):  # Might need to change to is not None
+        return HttpResponseBadRequest("We already have a wiki page for this.")
 
     util.save_entry(form_title, form_content)
     return redirect(f"/wiki/{form_title}")
