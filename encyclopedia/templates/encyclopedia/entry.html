@@ -1,5 +1,9 @@
 {% extends "encyclopedia/layout.html" %}
 
+<head>
+    {% block title %} {{ entry }} {% endblock %}
+</head>
+
 {% block body %}
 
 <div>{{content | safe}}</div>

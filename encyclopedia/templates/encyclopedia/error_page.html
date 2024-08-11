@@ -1,9 +1,11 @@
 {% extends "encyclopedia/layout.html" %}
 
+{% block title %} Wiki Error Page {% endblock %}
+
 {% block body %}
 
 It seems there's no entries title {{title}}. Would you like to write one?
-<a href="{%url 'new'%}">Yes</a>
+<a href="{%url 'new_entry'%}">Yes</a>
 
 <!-- Make a link here to create a page when that exists -->
 
