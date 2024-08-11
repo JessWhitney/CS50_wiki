@@ -16,6 +16,17 @@ def index(request):
     return render(request, "encyclopedia/index.html", {"entries": util.list_entries()})
 
 
+def search(request):
+    entries = util.list_entries()
+    entries_low = [x.lower() for x in entries]
+    query = request.GET.get("q")
+    if query.lower() in entries_low:
+        return redirect(f"/wiki/{query}")
+    results = [entry for entry in entries if query.lower() in entry.lower()]
+    # Note to self, this is saying include an entry in the results list if the query is a substring of it
+    return render(request, "encyclopedia/index.html", {"entries": results})
+
+
 def entry_page(request, title):
     if request.method == "POST":
         form = SearchForm(request.POST)
