@@ -6,6 +6,16 @@
 
 <div>Create a New Wiki Entry:</div>
 
+{% if messages %}
+<div>
+    {% for message in messages %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <form action="" method="post">
     {% csrf_token %}
     <input required class="form-control" type="text" name="entry_title" id="entry_title" placeholder="Title">
@@ -15,6 +25,5 @@
     <br>
     <button type="submit">Submit</button>
 </form>
-
 
 {% endblock %}
