@@ -52,7 +52,7 @@ def edit_page(request, title):
         "encyclopedia/edit.html",
         {
             "title":title.capitalize(), 
-            "content": markdown2.markdown(util.get_entry(title)),
+            "content": util.get_entry(title),
         },
     )
 

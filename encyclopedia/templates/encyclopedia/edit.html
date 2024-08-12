@@ -10,14 +10,11 @@ Editing "{{ title }}"
     {% csrf_token %}
 
     <input type="hidden" name="editing" value="true">
-    <div class="mb-3">
-        <label for="title" class="form-label">Entry Title</label>
-        <input name="title" readonly value="{{ title }}" required type="text" class="form-control" id="title">
-    </div>
-    <div class="mb-3">
-        <label for="content" class="form-label">Content (Markdown)</label>
-        <textarea name="content" required class="form-control" id="content" rows="6">{{ content }}</textarea>
-    </div>
+
+    <input name="title" readonly value="{{ title }}" required type="text" class="form-control" id="title">
+    <br>
+    <textarea name="content" required class="form-control" id="content" rows="6">{{ content }}</textarea>
+
 
     <button type="submit" class="btn btn-primary">Save</button>
     <a class="btn btn-danger" href="/">Discard</a>
