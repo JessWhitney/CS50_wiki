@@ -7,6 +7,7 @@ import re
 from django.contrib import messages
 
 import markdown2
+import random
 
 
 class SearchForm(forms.Form):
@@ -72,3 +73,5 @@ def new_entry(request):
     util.save_entry(form_title, form_content)
     return redirect(f"/wiki/{form_title}")
 
+def random_page(request):
+    return redirect(f"wiki/{random.choice(util.list_entries())}")
