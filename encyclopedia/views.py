@@ -45,6 +45,15 @@ def entry_page(request, title):
             },
         )
 
+def edit_page(request, title):
+    return render(
+        request, 
+        "encyclopedia/edit.html",
+        {
+            "title":title.capitalize(), 
+            "content": markdown2.markdown(util.get_entry(title)),
+        },
+    )
 
 def new_entry(request):
     if request.method == "GET":
@@ -62,3 +71,4 @@ def new_entry(request):
 
     util.save_entry(form_title, form_content)
     return redirect(f"/wiki/{form_title}")
+

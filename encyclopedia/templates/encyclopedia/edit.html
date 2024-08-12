@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %} Edit {{ entry }} {% endblock %}
+
+
+{% block body %}
+
+<div>Edit Wiki Entry:</div>
+
+
+<!-- <form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="edit_function" value="true">
+    <input name="entry" readonly value="{{ entry }}" required type="text" class="form-control">
+    <textarea required class="form-control" rows="5" name="entry_content"
+        id="entry_content">{{content | safe}}</textarea>
+    <br>
+    <button type="submit">Submit</button>
+</form> -->
+
+{% endblock %}
