@@ -11,13 +11,13 @@ Editing "{{ title }}"
 
     <input type="hidden" name="editing" value="true">
 
-    <input name="title" readonly value="{{ title }}" required type="text" class="form-control" id="title">
+    <input name="title" readonly value="{{ title }}" required type="text" class="edit-box" id="edit-entry-title">
     <br>
-    <textarea name="content" required class="form-control" id="content" rows="6">{{ content }}</textarea>
+    <textarea name="content" required class="edit-box" id="content" rows="6">{{ content }}</textarea>
 
 
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a class="btn btn-danger" href="/">Discard</a>
+    <button type="submit" class="save-button">Save</button>
+    <a class="discard-button" href="/">Discard</a>
 </form>
 
 {% endblock %}

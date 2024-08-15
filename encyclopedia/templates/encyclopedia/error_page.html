@@ -5,10 +5,10 @@
 {% block body %}
 
 It seems there's no entries title {{title}}. Would you like to write one?
-<a href="{%url 'new_entry'%}">Yes</a>
+<a class="text-link" href="{%url 'new_entry'%}">Yes</a>
 
 <!-- Make a link here to create a page when that exists -->
 
-Return to the home page by clicking <a href="{% url 'index' %}">here</a>.
+Return to the home page by clicking <a class="text-link" href="{% url 'index' %}">here</a>.
 
 {% endblock %}
