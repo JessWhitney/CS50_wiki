@@ -30,11 +30,11 @@ def search(request):
 
 
 def entry_page(request, title):
-    if request.method == "POST":
-        form = SearchForm(request.POST)
-        query = form.cleaned_data["query"]
-        return render(request, "encyclopedia/search.html", {"search": query})
-    elif util.get_entry(title) == None:
+    # if request.method == "POST":
+    #     form = SearchForm(request.POST)
+    #     query = form.cleaned_data["query"]
+    #     return render(request, "encyclopedia/search.html", {"search": query})
+    if util.get_entry(title) == None:
         return render(request, "encyclopedia/error_page.html", {"title": title})
     else:
         return render(
