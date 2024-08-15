@@ -28,11 +28,27 @@ textarea {
 }
 
 .sidebar {
-    background-color: #f0f0f0;
+    background-color: #8de190;
     height: 100vh;
     padding: 20px;
 }
 
 .sidebar h2 {
     margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* .sidebar .search{
+    padding: 0px;
+} */
+
+.sidebar .search {
+    margin-top: 5px;
+}
+
+.sidebar .sidebar-item,
+.sidebar .search {
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
