@@ -4,8 +4,8 @@
 
 {% block body %}
 
-<h1 id="create-new-entry">Create a New Wiki Entry:</h1>
-
+<h1 id="create-new-entry">Create a New Wiki Entry</h1>
+<hr class="solid">
 {% if messages %}
 <div>
     {% for message in messages %}
@@ -16,11 +16,11 @@
 </div>
 {% endif %}
 
-<form action="" method="post">
+<form id="new-entry-form" action="" method="post">
     {% csrf_token %}
-    <input required class="edit-box" type="text" name="entry_title" id="entry_title" placeholder="Title">
+    <input required class="form-control" type="text" name="entry_title" id="entry_title" placeholder="Title">
     <br>
-    <textarea required class="edit-box" rows="5" name="entry_content" id="entry_content"
+    <textarea required class="form-control" rows="5" name="entry_content" id="entry_content"
         placeholder="Entry content"></textarea>
     <br>
     <button class="save-button" id="submit-button" type="submit">Submit</button>

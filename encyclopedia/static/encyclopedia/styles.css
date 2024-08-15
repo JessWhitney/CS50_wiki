@@ -7,20 +7,90 @@ code {
     white-space: pre;
 }
 
-h1 {
+h1, p {
     margin-top: 0px;
     padding-top: 20px;
 }
 
 textarea {
-    height: 90vh;
+    height: 50vh;
     width: 80%;
 }
 
 .main {
-    padding: 10px;
+    padding: 20px;
 }
 
+/* Styling the divider */
+.main hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Contents page */
+.main .all-entries {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none; /* Formats the actual bullet points*/
+}
+
+.main .all-entries li {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px 0;
+}
+
+.main .all-entries .text-link {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color:black;
+}
+
+/* Main text */
+.main .entry-content, 
+.main .all-entries{
+    font-size: 18px;
+}
+
+.main .entry-content h1 {
+    font-weight: bold;
+    font-size: 42px;
+}
+/* End main text */
+
+/* Edit button */
+.main .edit-button {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.main .edit-button button,
+.main .save-button{
+    background-color: #8de190;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.main .edit-button button{
+    margin-right: 3vw;
+}
+
+.main .discard-button{
+    background-color: #e18d8e;
+    color: black;
+    border: none;
+    padding: 7px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 3vw;
+}
+
+/* Styling the sidebar */
 .search {
     width: 100%;
     font-size: 15px;
@@ -35,13 +105,11 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+    font-size: 52px;
     font-weight: bold;
     text-align: center;
-}
 
-/* .sidebar .search{
-    padding: 0px;
-} */
+}
 
 .sidebar .search {
     margin-top: 5px;
@@ -52,3 +120,39 @@ textarea {
     margin-left: 5px;
     margin-bottom: 5px;
 }
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+}
+/* End styling sidebar */
+
+/* Styling 'new-entry' and 'edit' pages */
+.main .form-control {
+    /* box-sizing: border-box; */
+    width: 90%;
+    /* margin-left: 5%; */
+    margin-right: 5%;
+}
+
+#entry-title ,
+#edit-entry-title{
+    margin-bottom: 10px;
+}
+
+#edit-entry-title{
+    background-color: lightgrey;
+}
+
+.main .save-button,
+.main .discard-button {
+    font-weight: bold;
+}
+
+.main .discard-button {
+    text-decoration: none;
+    color: black;
+}
+/* End of editing sections */
+
+/* Error pages/messages */

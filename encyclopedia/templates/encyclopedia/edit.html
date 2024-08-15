@@ -5,15 +5,18 @@ Editing "{{ title }}"
 {% endblock %}
 
 {% block body %}
+<h1>Edit Entry</h1>
+<hr class="solid">
 
-<form action="/new_entry/" method="POST">
+<form id="edit-entry-form" action="/new_entry/" method="POST">
     {% csrf_token %}
 
     <input type="hidden" name="editing" value="true">
 
-    <input name="title" readonly value="{{ title }}" required type="text" class="edit-box" id="edit-entry-title">
-    <br>
-    <textarea name="content" required class="edit-box" id="content" rows="6">{{ content }}</textarea>
+    <input name="entry_title" readonly value="{{ title }}" required type="text" class="form-control"
+        id="edit-entry-title">
+
+    <textarea name="entry_content" required class="form-control" id="content" rows="6">{{ content }}</textarea>
 
 
     <button type="submit" class="save-button">Save</button>

@@ -62,7 +62,7 @@ def new_entry(request):
     form_title = request.POST.get("entry_title")
     form_content = request.POST.get("entry_content")
 
-    if util.get_entry(form_title):
+    if not request.POST.get("editing") and util.get_entry(form_title):
         # return HttpResponseBadRequest("We already have a wiki page for this.")
         messages.error(
             request,
@@ -71,7 +71,7 @@ def new_entry(request):
         return redirect("new_entry")
 
     util.save_entry(form_title, form_content)
-    return redirect(f"/wiki/{form_title}")
+    return redirect(f"/wiki/{form_title}/")
 
 def random_page(request):
     return redirect(f"wiki/{random.choice(util.list_entries())}")

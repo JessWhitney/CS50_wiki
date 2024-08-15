@@ -6,8 +6,9 @@ Encyclopedia
 
 {% block body %}
 <h1 id="all-pages">All Pages</h1>
+<hr class="solid">
 
-<ul>
+<ul class="all-entries">
     {% for entry in entries %}
     <li><a class="text-link" href="wiki/{{entry}}">{{ entry }}</a></li>
 
